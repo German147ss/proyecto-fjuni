@@ -1,8 +1,7 @@
 'use strict'
 
-$(document).ready(function(){
-
-
+document.addEventListener("DOMContentLoaded", function(event) {
+    
     $('body').on({ 'mousemove' : function( e ){
         console.clear()
         let clientX = e.originalEvent.clientX
@@ -21,5 +20,4 @@ $(document).ready(function(){
             $('#cursor').removeClass('mini')
         },
     })
-
-})
+});
