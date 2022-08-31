@@ -1,23 +1,33 @@
 'use strict'
 
-document.addEventListener("DOMContentLoaded", function(event) {
-    
-    $('body').on({ 'mousemove' : function( e ){
-        console.clear()
-        let clientX = e.originalEvent.clientX
-        let clientY = e.originalEvent.clientY
+function movimientoDeMouseBody(e) {
+    const body = document.getElementsByTagName('body')[0];
+    body.addEventListener('mousemove', function (e) {
         $('#cursor').css({
-            'left' : (clientX - 40 ) + 'px',
-            'top' : (clientY - 40 ) + 'px'
+            'left' : (e.offsetX - 40 ) + 'px',
+            'top' : (e.offsetY - 40 ) + 'px'
         })
-    }})
+    });
+}
 
-    $('.a').on({
-        'mouseover': function(){
-            $('#cursor').addClass('mini')
-        },
-        'mouseout': function(){
-            $('#cursor').removeClass('mini')
-        },
-    })
+function agregarMouseOver(event) {
+    document.getElementById('cursor').classList.add('mini');
+}
+
+function agregarMouseOut(event) {
+    document.getElementById('cursor').classList.remove('mini');
+}
+
+function agregarMovimiento(event) {
+    for (let index = 0; index < document.getElementsByClassName('a').length; index++) {
+        const elementoA = document.getElementsByClassName('a')[index];
+        elementoA.addEventListener('mouseover', agregarMouseOver);
+        elementoA.addEventListener('mouseout', agregarMouseOut);
+    }
+}
+    
+
+document.addEventListener("DOMContentLoaded", function(e) {
+    movimientoDeMouseBody();
+    agregarMovimiento();
 });
