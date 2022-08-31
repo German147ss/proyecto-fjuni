@@ -1,12 +1,9 @@
-'use strict'
-
 function movimientoDeMouseBody(e) {
     const body = document.getElementsByTagName('body')[0];
     body.addEventListener('mousemove', function (e) {
-        $('#cursor').css({
-            'left' : (e.offsetX - 40 ) + 'px',
-            'top' : (e.offsetY - 40 ) + 'px'
-        })
+        const cursor = document.getElementById('cursor');
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = (e.clientY - 40) + 'px'; 
     });
 }
 
@@ -25,9 +22,8 @@ function agregarMovimiento(event) {
         elementoA.addEventListener('mouseout', agregarMouseOut);
     }
 }
-    
 
 document.addEventListener("DOMContentLoaded", function(e) {
-    movimientoDeMouseBody();
-    agregarMovimiento();
+    movimientoDeMouseBody(e);
+    agregarMovimiento(e);
 });

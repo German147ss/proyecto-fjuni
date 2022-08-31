@@ -26,12 +26,19 @@
   box-sizing: border-box;
   vertical-align: baseline;
 }
+
 img , figure{
   max-width: 100%;
   width: 100%;
   display: flex;
   object-fit: cover;
   object-position: center center;
+}
+.img-redonda{
+  width:300px;
+  height:300px;
+  border-radius:150px;
+  margin: 0 auto;
 }
 a {
   display: block;
@@ -64,18 +71,7 @@ h1,h2,h3,h4,h5,h6 {
   font-weight: inherit;
   font-size: inherit;
 }
-form, button,
-input,
-textarea,
-select {
-  font-family: inherit;
-  font-size: inherit;
-  -webkit-hyphens: auto;
-          hyphens: auto;
-  background-color: transparent;
-  display: flex;
-  color: inherit;
-}
+
 body {
   font-family: var(--tipo-principal);
   font-size: 100%;
@@ -280,7 +276,6 @@ body {
   color:inherit;
   
 }
-.about{}
 .about .h2{
   margin: 0 0 2rem;
 }
@@ -290,17 +285,17 @@ body {
   font-size: 1.1em ;
   text-align: left;
 }
-.about .rrss{
+footer .rrss{
   width:100%;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
 }
-.about .li{
+footer .li{
   margin: 0 1em;
 }
-.about .svg{
+footer .svg{
   width:3em;
   height:3em;
 }
@@ -311,8 +306,6 @@ body {
   position: relative;
   z-index: 2;
 }
-.footer .span{}
-
 
 @keyframes circulo1{
   from{
@@ -349,5 +342,3 @@ body {
 #cursor.mini{
   transform: scale(0.7);
 }
-
-

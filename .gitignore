@@ -417,3 +417,7 @@ Thumbs.db
 *.config
 .DS_Store
 *.DS_Store
+
+js/firebase.js
+firebase.json
+.firebaserc
