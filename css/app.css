@@ -20,11 +20,29 @@
 }
 
 * {
+  /*Quitamos los margenes y paddings por defecto*/
   margin: 0;
   padding: 0;
+  /*Quitamos el border por defecto*/
   border: 0;
+  /* Articulo que explica box-sizing:
+  https://midu.dev/que-es-y-para-que-sirve-box-sizing-border-box/
+  https://dev.to/lupitacode/que-es-el-box-sizing-en-css-2pi9#:~:text=La%20propiedad%20box%2Dsizing%20(tama%C3%B1o,pasar%20con%20el%20box%2Dsizing.*/
   box-sizing: border-box;
+  /*
+  La propiedad vertical-align puede usarse para alterar la ubicación vertical de un elemento en línea, en relación a su elemento padre o a la línea del elemento. (Un elemento en línea es uno que no tiene salto de línea ni antes ni después de él; por ejemplo, EM, A y IMG en HTML.)
+  */
   vertical-align: baseline;
+}
+
+body {
+  font-family: var(--tipo-principal);
+  font-size: 100%;
+  min-height: 100vh;
+  background-color: var(--negro);
+  color: var(--blanco);
+  /* Ocultamos el cursor */
+  cursor: none;
 }
 
 img , figure{
@@ -35,8 +53,8 @@ img , figure{
   object-position: center center;
 }
 .img-redonda{
-  width:300px;
-  height:300px;
+  width:20rem;
+  height:20rem;
   border-radius:150px;
   margin: 0 auto;
 }
@@ -72,17 +90,7 @@ h1,h2,h3,h4,h5,h6 {
   font-size: inherit;
 }
 
-body {
-  font-family: var(--tipo-principal);
-  font-size: 100%;
-  min-height: 100vh;
-  background-color: var(--negro);
-  color: var(--blanco);
-  font-smooth: always;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  cursor: none;
-}
+
 
 .circulos{
   position: fixed;
