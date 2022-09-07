@@ -49,38 +49,36 @@ img , figure{
   max-width: 100%;
   width: 100%;
   display: flex;
+  /*
+  La propiedad CSS object-fit indica cómo el contenido de un elemento reemplazado, por ejemplo un <img> o <video>, debería redimensionarse para ajustarse a su contenedor.
+*/
   object-fit: cover;
+  /*La propiedad object-position determina el alineamiento del elemento dentro de la caja.*/
   object-position: center center;
 }
+
 .img-redonda{
+  /*https://www.freecodecamp.org/espanol/news/aprende-unidades-de-medidad-css-em-rem-vh-y-vw-con-ejemplos-de-codigos/*/
   width:20rem;
   height:20rem;
   border-radius:150px;
   margin: 0 auto;
 }
+
 a {
   display: block;
   text-decoration: none;
   color: inherit;
   cursor: none;
 }
-video {
-  max-width: 100%;
-  width: 100%;
-  display: flex;
-  object-fit: cover;
-  object-position: center center;
-}
+
 p a {
   display: inline;
 }
 li {
   list-style-type: none;
 }
-table,tr,td {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
+
 html {
   scroll-behavior: smooth;
 }
@@ -89,9 +87,7 @@ h1,h2,h3,h4,h5,h6 {
   font-weight: inherit;
   font-size: inherit;
 }
-
-
-
+/* Circulos */
 .circulos{
   position: fixed;
   width:100%;
@@ -139,31 +135,6 @@ h1,h2,h3,h4,h5,h6 {
   fill: rgb(0, 59, 155);
 }
 
-
-.header{
-  width: 100%;
-  min-height: 5em;
-  background: lightblue;
-
-  padding: 1em 2em;
-
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  align-items: center;
-
-  display: none;
-}
-.header .ul{
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  align-items: center;
-
-}
-.header .li{
-  margin:0 1em;
-}
 .main{
   background: var(--negro-7);
   margin: 0 0 1em;
@@ -187,7 +158,6 @@ h1,h2,h3,h4,h5,h6 {
   
 }
 .seccion .ul{
-  /* background: red; */
   margin: 2em 0 0;
   display: flex;
   flex-flow: row wrap;
@@ -195,7 +165,6 @@ h1,h2,h3,h4,h5,h6 {
   align-items: center;
 }
 .seccion .ul .li{
-  /* background: chartreuse; */
   margin: 0 1em;
 }
 .seccion .ul .a{
@@ -235,6 +204,7 @@ h1,h2,h3,h4,h5,h6 {
   grid-template-columns: repeat( auto-fit , minmax( 15rem , 1fr) );
   gap:1em;
 }
+
 .seccion .article{
   width: 100%;
   min-height: 20vh;
@@ -248,9 +218,21 @@ h1,h2,h3,h4,h5,h6 {
   position: relative;
   overflow: hidden;
   border-radius: 1em;
-  
 }
-.seccion .h4{
+
+.seccion .article:hover .h4{
+  opacity: 1;
+  transform:translateZ(1) scale(1);
+}
+/*works*/
+.works{
+  color:var(--blanco);
+}
+.works .h2{
+  margin: 0 0 1rem;
+  color:inherit; 
+}
+.works .h4{
   width:100%;
   height: 100%;
   background-color: var(--negro-5);
@@ -272,18 +254,7 @@ h1,h2,h3,h4,h5,h6 {
   transform:translateZ(1) scale(1.5);
   transition: all .5s ease;
 }
-.seccion .article:hover .h4{
-  opacity: 1;
-  transform:translateZ(1) scale(1);
-}
-.works{
-  color:var(--blanco);
-}
-.works .h2{
-  margin: 0 0 1rem;
-  color:inherit;
-  
-}
+/*About*/
 .about .h2{
   margin: 0 0 2rem;
 }
@@ -293,6 +264,7 @@ h1,h2,h3,h4,h5,h6 {
   font-size: 1.1em ;
   text-align: left;
 }
+/*Footer*/
 footer .rrss{
   width:100%;
   display: flex;
@@ -333,7 +305,7 @@ footer .svg{
     transform: translateY(0%);
   }
 }
-
+/*Cursor*/
 #cursor{
   width:5em;
   height:5em;
