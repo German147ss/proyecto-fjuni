@@ -5,43 +5,25 @@
   --negro: #181818;
   --negro-5: rgba(0, 0, 0, 0.5);
   --negro-7: rgba(0, 0, 0, 0.75);
-  --tipo-titular:'Playfair Display', serif;
-  --tipo-principal:'Inter', sans-serif;
-}
-
-@media screen and (prefers-color-scheme:dark){
-  :root {
-    --blanco: #181818;
-    --blanco-2: rgba(0,0,0,.2);
-    --negro: #e0e0e0;
-    --negro-5: rgba(255, 255, 255, 0.5);
-    --negro-7: rgba(255, 255, 255, 0.75);
-  }
+  --fuente-titular:'Playfair Display', serif;
+  --fuente-principal:'Inter', sans-serif;
 }
 
 * {
-  /*Quitamos los margenes y paddings por defecto*/
   margin: 0;
   padding: 0;
-  /*Quitamos el border por defecto*/
   border: 0;
-  /* Articulo que explica box-sizing:
-  https://midu.dev/que-es-y-para-que-sirve-box-sizing-border-box/
-  https://dev.to/lupitacode/que-es-el-box-sizing-en-css-2pi9#:~:text=La%20propiedad%20box%2Dsizing%20(tama%C3%B1o,pasar%20con%20el%20box%2Dsizing.*/
   box-sizing: border-box;
-  /*
-  La propiedad vertical-align puede usarse para alterar la ubicación vertical de un elemento en línea, en relación a su elemento padre o a la línea del elemento. (Un elemento en línea es uno que no tiene salto de línea ni antes ni después de él; por ejemplo, EM, A y IMG en HTML.)
-  */
   vertical-align: baseline;
 }
 
 body {
-  font-family: var(--tipo-principal);
+  font-family: var(--fuente-principal);
   font-size: 100%;
   min-height: 100vh;
   background-color: var(--negro);
   color: var(--blanco);
-  /* Ocultamos el cursor */
+  /* Ocultamos el cursor: al final */
   cursor: none;
 }
 
@@ -49,19 +31,14 @@ img , figure{
   max-width: 100%;
   width: 100%;
   display: flex;
-  /*
-  La propiedad CSS object-fit indica cómo el contenido de un elemento reemplazado, por ejemplo un <img> o <video>, debería redimensionarse para ajustarse a su contenedor.
-*/
   object-fit: cover;
-  /*La propiedad object-position determina el alineamiento del elemento dentro de la caja.*/
   object-position: center center;
 }
 
 .img-redonda{
-  /*https://www.freecodecamp.org/espanol/news/aprende-unidades-de-medidad-css-em-rem-vh-y-vw-con-ejemplos-de-codigos/*/
   width:20rem;
   height:20rem;
-  border-radius:150px;
+  border-radius:50%;
   margin: 0 auto;
 }
 
@@ -69,6 +46,7 @@ a {
   display: block;
   text-decoration: none;
   color: inherit;
+  /* cursor lo ocultaremos mas adelante*/
   cursor: none;
 }
 
@@ -96,14 +74,14 @@ h1,h2,h3,h4,h5,h6 {
   left:0;
   z-index: 1;
   filter: blur(40px);
-  animation:circulo1 50s linear infinite both;
+  animation:circulo1 20s linear infinite both;
 
 }
 .circulos .circulo{
  position: absolute;
  width:50%;
  height: 50%;
- animation:circulo1 50s linear infinite both;
+ animation:circulo1 20s linear infinite both;
 }
 .circulos .circulo1{
   top:0%;
@@ -141,6 +119,7 @@ h1,h2,h3,h4,h5,h6 {
   text-align: center;
   position: relative;
   z-index: 2;
+
 }
 .seccion{
   width: 100%;
@@ -152,12 +131,11 @@ h1,h2,h3,h4,h5,h6 {
   justify-content: center;
   align-items: center;
 }
-.seccion .info{
+.info{
   font-size: 1.2em;
-  animation: aparecer1 2s ease 1 both ;
-  
+  animation: aparecer 2s ease 1 both ; 
 }
-.seccion .ul{
+.seccion ul{
   margin: 2em 0 0;
   display: flex;
   flex-flow: row wrap;
@@ -182,19 +160,19 @@ h1,h2,h3,h4,h5,h6 {
 .seccion .ul .a:hover{
   border-color: var(--blanco);
 }
-.seccion .h2{
-  font-family: var(--tipo-titular);
+.seccion h2{
+  font-family: var(--fuente-titular);
   font-weight: 600;
   font-size: 5em;
   line-height:1em;
   color:var(--blanco);
   mix-blend-mode: exclusion;
- 
 }
-.seccion .h3{
-  font-family: var(--tipo-titular);
+.seccion h3{
+  font-family: var(--fuente-titular);
   font-size: 4.3em;
 }
+
 .seccion .grid{
   width: 90%;
   max-width: 40em;
@@ -205,10 +183,10 @@ h1,h2,h3,h4,h5,h6 {
   gap:1em;
 }
 
-.seccion .article{
+.seccion article{
   width: 100%;
   min-height: 20vh;
-  background: lightgoldenrodyellow;
+  background: var(--negro);
 
   display: flex;
   flex-flow: column nowrap;
@@ -220,7 +198,7 @@ h1,h2,h3,h4,h5,h6 {
   border-radius: 1em;
 }
 
-.seccion .article:hover .h4{
+.seccion article:hover h4{
   opacity: 1;
   transform:translateZ(1) scale(1);
 }
@@ -228,11 +206,11 @@ h1,h2,h3,h4,h5,h6 {
 .works{
   color:var(--blanco);
 }
-.works .h2{
+.works h2{
   margin: 0 0 1rem;
   color:inherit; 
 }
-.works .h4{
+.works h4{
   width:100%;
   height: 100%;
   background-color: var(--negro-5);
@@ -248,43 +226,54 @@ h1,h2,h3,h4,h5,h6 {
   
   color:var(--blanco);
   font-size: 1.8em;
-  font-family: var(--tipo-titular);
+  font-family: var(--fuente-titular);
   font-style: italic;
   opacity: 0;
   transform:translateZ(1) scale(1.5);
   transition: all .5s ease;
 }
 /*About*/
-.about .h2{
+.about h2{
   margin: 0 0 2rem;
 }
-.about .p{
+.about p{
   max-width: 40rem;
   margin: 0 0 2rem;
   font-size: 1.1em ;
   text-align: left;
 }
 /*Footer*/
-footer .rrss{
+footer ul{
   width:100%;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
 }
-footer .li{
+footer li{
   margin: 0 1em;
 }
-footer .svg{
+footer svg{
   width:3em;
   height:3em;
 }
-.footer{
+footer{
   padding:2em 0;
   text-align: center;
   color:var(--blanco);
   position: relative;
   z-index: 2;
+}
+
+@keyframes aparecer{
+  from{
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0%);
+  }
 }
 
 @keyframes circulo1{
@@ -293,16 +282,6 @@ footer .svg{
   }
   to{
     transform:rotate(360deg) scale(2);
-  }
-}
-@keyframes aparecer1{
-  from{
-    opacity: 0;
-    transform: translateY(50%);
-  }
-  to{
-    opacity: 1;
-    transform: translateY(0%);
   }
 }
 /*Cursor*/
@@ -319,6 +298,111 @@ footer .svg{
   mix-blend-mode: difference;
 
 }
-#cursor.mini{
+
+.mini{
   transform: scale(0.7);
+}
+
+.typed-out{
+  overflow: hidden;
+  border-right: .15em solid white;
+  white-space: nowrap;
+  animation: 
+  typing 2s steps(30, end) forwards,
+  blinking 1.3s infinite;
+  /* font-size: 1.6rem; */
+  width: 0;
+  animation-delay: 1s;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blinking {
+  from { border-color: transparent }
+  to { border-color: white; }
+}
+
+/* media query phone*/
+@media screen and (max-width: 600px){
+  /* hide cursor*/
+  #cursor{
+    display: none;
+  }
+  .seccion h2{
+    font-size: 2em;
+  }
+  .seccion h3{
+    font-size: 1.8em;
+  }
+  .seccion .grid{
+    grid-template-columns: repeat( auto-fit , minmax( 10rem , 1fr) );
+  }
+  .seccion article{
+    border-radius: 0.5em;
+  }
+  .seccion article:hover h4{
+    transform:translateZ(1) scale(1.5);
+  }
+  .seccion .ul .a{
+    padding: 0.5em 0.5em 0.5em;
+  }
+  .seccion .ul .li{
+    margin: 0 0.5em;
+  }
+  .seccion .ul{
+    margin: 1em 0 0;
+  }
+  .seccion .ul .a:hover{
+    border-color: var(--blanco);
+  }
+  .seccion .ul .a{
+    font-size: 0.8em;
+  }
+  .seccion .ul .a:hover{
+    border-color: var(--blanco);
+  }
+  .seccion .ul .a{
+    font-size: 0.8em;
+  }
+  .seccion .ul .a:hover{
+    border-color: var(--blanco);
+  }
+  .seccion .ul .a{
+    font-size: 0.8em;
+  }
+  .seccion .ul .a:hover{
+    border-color: var(--blanco);
+  }
+  .seccion .ul .a{
+    font-size: 0.8em;
+  }
+  .seccion .ul .a:hover{
+    border-color: var(--blanco);
+  }
+  .seccion .ul .a{
+    font-size: 0.8em;
+  }
+  .seccion .ul .a:hover{
+    border-color: var(--blanco);
+  }
+  .seccion .ul .a{
+    font-size: 0.8em;
+  }
+  .seccion .ul .a:hover{
+    border-color: var(--blanco);
+  }
+  .seccion .ul .a{
+    font-size: 0.8em;
+  }
+  .seccion .ul .a:hover{
+    border: 1px solid var(--blanco);
+  }
+  /*typed out responsive*/
+  .typed-out{
+    font-size: 1.2em;
+    
+  }
 }

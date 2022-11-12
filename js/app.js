@@ -1,29 +1,43 @@
-function movimientoDeMouseBody(e) {
+function movimientoDeMouseBody() {
     const body = document.querySelector('body');
-    body.addEventListener('mousemove', function (e) {
-        const cursor = document.getElementById('cursor');
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = (e.clientY - 40) + 'px'; 
-    });
+    body.addEventListener('mousemove', moverPosiciónCursor);
 }
 
-function agregarMouseOver(event) {
+function moverPosiciónCursor(e) {
+    const cursor = document.getElementById('cursor');
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = (e.clientY - 40) + 'px'; 
+}
+
+function agregarMouseOver() {
     document.getElementById('cursor').classList.add('mini');
 }
 
-function agregarMouseOut(event) {
+function agregarMouseOut() {
     document.getElementById('cursor').classList.remove('mini');
 }
 
-function agregarMovimiento(event) {
-    for (let index = 0; index < document.getElementsByClassName('a').length; index++) {
-        const elementoA = document.getElementsByClassName('a')[index];
-        elementoA.addEventListener('mouseover', agregarMouseOver);
-        elementoA.addEventListener('mouseout', agregarMouseOut);
+function agregarMovimientoSobreBotones() {
+    const botonesA = document.getElementsByClassName('a');
+    for (let index = 0; index < botonesA.length; index++) {
+        const botonA = botonesA[index];
+        botonA.addEventListener('mouseover', agregarMouseOver);
+        botonA.addEventListener('mouseout', agregarMouseOut);
     }
 }
+/* 
+var i = 0;
+var txt = document.getElementById("title-name").innerHTML;
+var speed = 50;
 
-document.addEventListener("DOMContentLoaded", function(e) {
-    movimientoDeMouseBody(e);
-    agregarMovimiento(e);
-});
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("title-name").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+} */
+
+movimientoDeMouseBody();
+agregarMovimientoSobreBotones();
+/* typeWriter(); */
